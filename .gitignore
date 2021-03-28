@@ -1,2 +1,4 @@
 electron-builder.yml
 node_modules/
+.gitignore
+.DS_Store
