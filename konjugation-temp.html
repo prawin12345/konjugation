@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bootstrap.min.css">
+<LINK rel="stylesheet" type="text/css" href="nav_style.css" title="nav style" media="screen">
+<LINK rel="stylesheet" type="text/css" href="side_style.css" title="nav style" media="screen">
+</head>
+<header>
+<img src="nav_bild_small.png" class="nav_img" alt="Logo">
+<div class="nav_div" data-version="1">6</div>
+</header>
+
+<title>Franz - prawin.gq</title>
+<body class="body">
+<h5>Conjugez <span id="verbDisplay"> les verbes </span> au <span id="tenseDisplay"> temps grammaticals <span></h5>
+<div id="outer">
+<p id="inputs"></p>
+<button class="btn btn-danger" onclick="ask()"> reset </button>
+<button class="btn btn-primary" id="btn"> start </button>
+</div>
+<script>
+module.paths.push("/Users/prawinrajasena/Develepment/node")
+require("konjugation-temp.js")
+</script>
+<style>
+#outer {
+    display: inline-block;
+    min-width: 200px;
+}
+td {
+    padding-right: 10px;
+}
+table {
+    margin-top: 10px;
+}
+#btn {
+    width: calc(100% - 77px);
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid #007bff;
+    background-color: transparent;
+    color: inherit;
+    border-radius: 0;
+}
+input.wrong {
+    border-bottom: 2px solid red;
+    color: red;
+}
+input.right {
+    border-bottom: 2px solid green;
+    color: green;
+}
+</style>
+<script>
+function ask() {
+    if (confirm(unescape("zur%FCcksetzen?"))) reset();
+}
+function reset() {
+    localStorage.clear();
+    window.location = "index.html";
+}
+</script>
+</body>

@@ -1,0 +1,94 @@
+:root {
+    color-scheme:light dark
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    #wetter {
+        background-color:transparent
+    }
+
+    p {
+        background-color: #000;
+        color: #e6e6e6;
+        border-color:#e6e6e6
+    }
+
+    .body, body {
+        background-color: #000;
+        color:#e6e6e6
+    }
+
+    .sidenav {
+        background-color:#222
+    }
+
+    .sidenav a:hover {
+        color: #fff;
+        text-decoration:none
+    }
+
+    nav {
+        background-color:#222
+    }
+
+    .counter {
+        background-color:#222
+    }
+
+    .list-group-item {
+        background-color-non: #000 !important;
+        background-color: #111 !important;
+        color: #b6afa8 !important;
+        border-top-color: rgba(255, 255, 255, .125) !important;
+        border-right-color: rgba(255, 255, 255, .125) !important;
+        border-bottom-color: rgba(255, 255, 255, .125) !important;
+        border-left-color:rgba(255, 255, 255, .125) !important
+    }
+
+    .list-group-item:hover {
+        background-color: #111 !important;
+        color:#f0f0f0 !important
+    }
+
+    .table-cell {
+        color: #dfdbd7;
+        border-top:1px solid #221e1a !important
+    }
+
+    cloudflare-app[app=flashcard] {
+        color: #fff;
+        background-color: #333 !important;
+        border:0
+    }
+
+    cloudflare-app[app=flashcard] flashcard-footer .flashcard-action {
+        background-color:#333 !important
+    }
+
+    cloudflare-app p {
+        background-color:#333 !important
+    }
+
+    .bottom_nav {
+        text-align: center;
+        -webkit-appearance: none !important;
+        display: inline-block;
+        padding: .375rem .75rem;
+        color: #fff;
+        background-color: #007bff;
+        border: 1px solid #007bff !important;
+        border-radius:.25rem
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .sidenav {
+        background-color:#f0f0f0
+    }
+
+    .sidenav a:hover {
+        color: #000
+    }
+}

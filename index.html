@@ -1,19 +1,387 @@
 <!DOCTYPE html>
 <head>
-  <title>Electron Auto Update Example</title>
-  <style>
-    body {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 20px;
-      font-family: sans-serif;
-      background-color: #eaeaea;
-      text-align: center;
-    }
-  </style>
+  <title>Franz - Konjugation</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bootstrap.min.css">
+<LINK rel="stylesheet" type="text/css" href="nav_style.css" title="nav style" media="screen">
+<LINK rel="stylesheet" type="text/css" href="side_style.css" title="nav style" media="screen">
+
 </head>
+<header>
+  <img src="nav_bild_small.png" class="nav_img" alt="Logo">
+  <div class="nav_div" data-version="1">6</div>
+</header>
 <body>
-  <h1>Electron Auto Update Example</h1>
+  <p>Unten sind die Verben und die Zeitformen, in denen sie abgefragt werden zur Auswahl. Die Untergruppen können auf- und zugeklappt werden, ohne dass die Auswahl verloren geht:</p>
+
+  <div>
+    <details>
+    <summary>Verben</summary>
+
+        <details>
+            <summary> <input id="er" type="checkbox"/> Verben auf -er </summary>
+            <details>
+                <summary> <input id="er_normal" type="checkbox"/> regelmässig </summary>
+                <ul>
+                    <li><input id="regarder" type="checkbox"/> regarder</li>
+                    <li><input id="entrer" type="checkbox"/> entrer</li>
+                <ul>
+            </details>
+            <details>
+                <summary> <input id="er_special" type="checkbox"/> mit Besonderheiten </summary>
+                <ul>
+                    <li><input id="acheter" type="checkbox"/> acheter</li>
+                    <li><input id="préférer" type="checkbox"/> pr&eacute;f&eacute;rer</li>
+                    <li><input id="appeler" type="checkbox"/> appeler</li>
+                    <li><input id="essayer" type="checkbox"/> essayer</li>
+                    <li><input id="commencer" type="checkbox"/> commencer</li>
+                    <li><input id="manger" type="checkbox"/> manger</li>
+                <ul>
+            </details>
+        </details>
+
+        <details>
+            <summary> <input id="dre" type="checkbox"/> Verben auf -dre </summary>
+            <ul>
+                <li><input id="répondre" type="checkbox"/> r&eacute;pondre</li>
+                <li><input id="descendre" type="checkbox"/> descendre</li>
+            <ul>
+        </details>
+
+        <details>
+            <summary> <input id="ir" type="checkbox"/> Verben auf -ir </summary>
+            <ul>
+                <li><input id="dormir" type="checkbox"/> Gruppe dormir </li>
+                <li><input id="choisir" type="checkbox"/> Gruppe choisir </li>
+            </ul>
+        </details>
+
+        <details>
+            <summary> <input id="indre" type="checkbox"/> Verben auf -indre </summary>
+            <ul>
+                <li><input id="craindre" type="checkbox"/> craindre</li>
+                <li><input id="se plaindre" type="checkbox"/> se plaindre</li>
+            </ul>
+        </details>
+
+        <details>
+            <summary> <input id="irregular" type="checkbox"/> unregelmässige Verben </summary>
+            <ul>
+                <li><input id="aller" type="checkbox"/> aller </li>
+                <li><input id="avoir" type="checkbox"/> avoir </li>
+                <li><input id="boire" type="checkbox"/> boire </li>
+                <li><input id="connaître" type="checkbox"/> connaître </li>
+                <li><input id="courir" type="checkbox"/> courir </li>
+                <li><input id="croire" type="checkbox"/> croire </li>
+                <li><input id="devoir" type="checkbox"/> devoir </li>
+                <li><input id="dire" type="checkbox"/> dire </li>
+                <li><input id="envoyer" type="checkbox"/> envoyer </li>
+                <li><input id="écrire" type="checkbox"/> écrire </li>
+                <li><input id="être" type="checkbox"/> être </li>
+                <li><input id="faire" type="checkbox"/> faire </li>
+                <li><input id="falloir" type="checkbox"/> falloir </li>
+                <li><input id="fuir" type="checkbox"/> fuir </li>
+                <li><input id="lire" type="checkbox"/> lire </li>
+                <li><input id="mettre" type="checkbox"/> mettre </li>
+                <li><input id="mourir" type="checkbox"/> mourir </li>
+                <li><input id="offrir" type="checkbox"/> offrir </li>
+                <li><input id="plaire" type="checkbox"/> plaire </li>
+                <li><input id="pleuvoir" type="checkbox"/> pleuvoir </li>
+                <li><input id="pouvoir" type="checkbox"/> pouvoir </li>
+                <li><input id="prendre" type="checkbox"/> prendre </li>
+                <li><input id="recevoir" type="checkbox"/> recevoir </li>
+                <li><input id="rire" type="checkbox"/> rire </li>
+                <li><input id="savoir" type="checkbox"/> savoir </li>
+                <li><input id="suivre" type="checkbox"/> suivre </li>
+                <li><input id="venir" type="checkbox"/> venir </li>
+                <li><input id="vivre" type="checkbox"/> vivre </li>
+                <li><input id="vouloir" type="checkbox"/> vouloir </li>
+            </ul>
+        </details>
+    </details>
+
+
+    <details>
+        <summary>Zeitformen</summary>
+
+        <details>
+            <summary> <input id="Indicatif" type="checkbox"/> Indicatif </summary>
+            <ul>
+                <li><input id="Indicatif_Présent" type="checkbox"/> pr&eacute;sent</li>
+                <li><input id="Indicatif_Imparfait" type="checkbox"/> imparfait</li>
+                <li><input id="Indicatif_Futur" type="checkbox"/> futur</li>
+                <li><input id="Indicatif_Passé_simple" type="checkbox"/> pass&eacute; simple</li>
+                <li><input id="Indicatif_Passé_composé" type="checkbox"/> pass&eacute; compos&eacute;</li>
+                <li><input id="Indicatif_Plus-que-parfait" type="checkbox"/> plus-que-parfait</li>
+                <li><input id="Indicatif_Passé_antérieur" type="checkbox"/> pass&eacute; ant&eacute;rieur</li>
+                <li><input id="Indicatif_Futur_antérieur" type="checkbox"/> futur ant&eacute;rieur</li>
+            </ul>
+        </details>
+
+        <details>
+            <summary> <input id="Conditionnel" type="checkbox"/> Conditionnel </summary>
+            <ul>
+                <li><input id="Conditionnel_Présent" type="checkbox"/> pr&eacute;sent</li>
+                <li><input id="Conditionnel_Passé_première_forme" type="checkbox"/> pass&eacute;</li>
+                <li><input id="Conditionnel_Passé_deuxième_forme" type="checkbox"/> pass&eacute; (2)</li>
+            </ul>
+        </details>
+
+        <details>
+            <summary> <input id="Subjonctif" type="checkbox"/> Subjonctif </summary>
+            <ul>
+                <li><input id="Subjonctif_Présent" type="checkbox"/> pr&eacute;sent</li>
+                <li><input id="Subjonctif_Imparfait" type="checkbox"/> imparfait</li>
+                <li><input id="Subjonctif_Plus-que-parfait" type="checkbox"/> plus-que-parfait</li>
+                <li><input id="Subjonctif_Passé" type="checkbox"/> pass&eacute;</li>
+            </ul>
+        </details>
+
+        <!--<details>
+            <summary> <input id="Impératif" type="checkbox"/> Imp&eacute;ratif</summary>
+             <ul>
+                <li><input id="Impératif_Présent" type="checkbox"/> pr&eacute;sent</li>
+                <li><input id="Impératif_Passé" type="checkbox"/> pass&eacute;</li>
+            </ul>
+        </details>-->
+    </details><br>
+    <button class="btn btn-primary" id="btn" style"margin-right: 10px;"> weiter </button>
+    
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+    Presets
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Presets</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            Presets wählen automatisch die Felder an. <br><br>
+            <button class="btn btn-primary" style"margin-right: 10px;" onclick="test2()"> exercice 1 (Tabelle) </button><br>
+            <button class="btn btn-primary" style"margin-right: 10px;" onclick="subj()"> subj. unregelm&auml;ssig </button>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">schliessen</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+</div>
+
+<style>
+  ul{
+      list-style-type: none;
+      padding-inline-start: 25px;
+  }
+  details {
+      margin-left: 16px;
+  }
+  summary{
+      margin-left: -16px;
+      outline: none;
+  }
+  
+  .modal-body button {
+      margin-top: 5px;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+  
+  .btn-primary {
+      color: #fff;
+      background-color: #375a7f;
+      border-color: #375a7f;
+  }
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #2b4764;
+    border-color: #28415b;
+  }
+  .btn-primary:focus, .btn-primary.focus {
+    color: #fff;
+    background-color: #2b4764;
+    border-color: #28415b;
+    box-shadow: 0 0 0 0.2rem rgba(85, 115, 146, 0.5);
+  }
+  
+  .badge-primary {
+      color: #fff;
+      background-color: #375a7f;
+  }
+  
+  .modal-content {
+    background-color: #303030;
+    border: 1px solid #444;
+  }
+  
+  .modal-footer {
+    border-top: 1px solid #444;
+  }
+  .modal-header {
+    border-bottom: 1px solid #444;
+  }
+  
+  .close, .close:hover {
+    color: #fff;
+  }
+  
+  .btn-secondary {
+    color: #fff;
+    background-color: #444;
+    border-color: #444;
+  }
+  .btn-secondary:hover {
+    color: #fff;
+    background-color: #313131;
+    border-color: #2b2b2b;
+  }
+  .btn-secondary:focus, .btn-secondary.focus {
+    color: #fff;
+    background-color: #313131;
+    border-color: #2b2b2b;
+    box-shadow: 0 0 0 0.2rem rgba(96, 96, 96, 0.5);
+  }
+  
+  .btn-success {
+    color: #fff;
+    background-color: #00bc8c;
+    border-color: #00bc8c;
+  }
+  .btn-success:hover {
+    color: #fff;
+    background-color: #009670;
+    border-color: #008966;
+  }
+  .btn-success:focus, .btn-success.focus {
+    color: #fff;
+    background-color: #009670;
+    border-color: #008966;
+    box-shadow: 0 0 0 0.2rem rgba(38, 198, 157, 0.5);
+  }
+  
+  .modal-dialog {
+      position: relative;
+      top: 20%;
+      transform: translateY(-50%);
+  }
+  }
+  </style>
+  
+  <script>
+  if (!(localStorage.newVerbs == "" || localStorage.newVerbs == null)) {
+      window.location = "konjugation-temp.html";
+  }
+  
+  function change_val(input, bool) {
+      tag = input.parentElement.parentElement.children[1];
+      list = tag.children;
+      if (tag.tagName == "DETAILS") {
+          list = input.parentElement.parentElement.children;
+          console.log(list)
+          for (elem of list) {
+              if (elem.tagName == "DETAILS") {
+                  details = elem.children[0].children[0];
+                  details.checked = bool;
+                  change_val(details, bool);
+              }
+          }
+      }
+      else {
+          for (elem of list) {
+              if (elem.tagName == "LI") {
+                  elem.children[0].checked = bool;
+              }
+          }
+      }
+  }
+  function toggle(input) {
+      change_val(input, input.checked);
+  }
+  var inputs = document.getElementsByTagName("input");
+  for (elem of inputs) {elem.onclick = function() {toggle(this)}}
+  
+  document.getElementById("btn").onclick = function exportSettings() {
+      var savedInputs = {}
+      var inputs = document.getElementsByTagName("input");
+      for (elem of inputs) {savedInputs[elem.id] = elem.checked}
+      localStorage.savedInputs = JSON.stringify(savedInputs);
+  
+      var obj = {}
+      var listElements = document.getElementsByTagName("li");
+      for (elem of listElements) {
+          if (elem.children[0].checked) {
+              obj[elem.children[0].id] = elem.children[0].checked;
+          }
+      }
+      console.log(obj)
+      localStorage.verbSelection = JSON.stringify(obj);
+      getSelectedVerbs()
+      //window.location = "konjugation-temp";
+  }
+  
+  function getSelectedVerbs() {
+      if (localStorage.verbSelection == null) {return alert("Error: kein localStorage")}
+      fetch('verben.json').then(response => {
+          if (!response.ok) {
+             throw new Error("HTTP error " + response.status);
+          }
+          return response.json();
+      })
+      .then(json => {
+          const verbs = json;
+          const verbSelection = JSON.parse(localStorage.verbSelection);
+          var selectedVerbs = {}
+          for ([verb, value] of Object.entries(verbs)) {
+              if (verbSelection[verb]) {
+                  tenses = value.temps;
+                  for ([tense, forms] of Object.entries(tenses)) {
+                      if (verbSelection[tense.replace(/ /g,"_")]) {
+                          selectedVerbs[verb] = selectedVerbs[verb] || {};
+                          selectedVerbs[verb][tense] = forms;
+                      }
+                  }
+              }
+          }
+          localStorage.selectedVerbs = JSON.stringify(selectedVerbs);
+          window.location = "konjugation-temp.html";
+      })
+  }
+  
+  function test() {
+      var tick = ["er", "dre", "ir", "indre", "irregular", "Indicatif_Présent", "Indicatif_Imparfait", "Indicatif_Futur", "Indicatif_Passé_composé", "Indicatif_Plus-que-parfait", "Conditionnel_Présent", "Conditionnel_Passé_première_forme"];
+      tick.forEach(id => document.getElementById(id).click());
+      document.getElementById("btn").click();
+  }
+  
+  function test2() {
+      var tick = ["er", "dre", "ir", "indre", "irregular", "Indicatif_Présent", "Indicatif_Imparfait", "Indicatif_Futur", "Indicatif_Passé_composé", "Indicatif_Plus-que-parfait", "Conditionnel_Présent", "Conditionnel_Passé_première_forme", "Subjonctif_Présent"];
+      tick.forEach(id => document.getElementById(id).click());
+      document.getElementById("btn").click();
+  }
+  
+  function subj() {
+      var tick = ["avoir", "être", "faire", "aller", "pouvoir", "savoir", "vouloir", "falloir", "pleuvoir", "Subjonctif_Présent"];
+      tick.forEach(id => document.getElementById(id).click());
+      document.getElementById("btn").click();
+  }
+
+  module.paths.push("/Users/prawinrajasena/Develepment/node")
+  require("jquery")
+  require("bootstrap.bundle.min.js")
+  </script>
+  <!-- <script src="jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="bootstrap.min.js" crossorigin="anonymous" async defer></script> -->
+
+
+  <br>
   <p id="version"></p>
 
   <div id="notification" class="hidden">
