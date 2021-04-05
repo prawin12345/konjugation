@@ -373,7 +373,7 @@
       document.getElementById("btn").click();
   }
 
-  module.paths.push(module.paths[1].replace("/node_modules","/"))
+  module.paths.push(module.paths[0].replace("node_modules",""))
   require("jquery")
   require("bootstrap.bundle.min.js")
   </script>
